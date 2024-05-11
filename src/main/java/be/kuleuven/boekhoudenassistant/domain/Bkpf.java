@@ -2,6 +2,7 @@ package be.kuleuven.boekhoudenassistant.domain;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+//Documentkop voor financiële boekhouding (BKPF)
 public class Bkpf {
 
     // Bedrijfsnummer

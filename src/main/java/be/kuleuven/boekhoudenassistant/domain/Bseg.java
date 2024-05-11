@@ -2,6 +2,7 @@ package be.kuleuven.boekhoudenassistant.domain;
 
 import java.time.LocalDate;
 
+//Documentsegment boekhouding (BSEG)
 public class Bseg {
 
     // Bedrijfsnummer
