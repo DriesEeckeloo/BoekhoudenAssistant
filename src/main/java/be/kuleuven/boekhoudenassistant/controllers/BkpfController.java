@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/bkpf")
 public class BkpfController {
@@ -16,7 +18,7 @@ public class BkpfController {
     }
 
     @GetMapping
-    public BkpfDto getAllBkpf() {
+    public List<BkpfDto> getAllBkpf() {
         return bkpfService.getAllBkpf();
     }
 }

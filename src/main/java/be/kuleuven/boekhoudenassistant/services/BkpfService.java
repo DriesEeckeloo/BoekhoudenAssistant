@@ -5,6 +5,8 @@ import be.kuleuven.boekhoudenassistant.repositories.BkpfRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional(readOnly = true)
 public class BkpfService {
@@ -14,7 +16,7 @@ public class BkpfService {
         this.bkpfRepository = bkpfRepository;
     }
 
-    public BkpfDto getAllBkpf() {
+    public List<BkpfDto> getAllBkpf() {
         return bkpfRepository.getAllBkpf();
     }
 }

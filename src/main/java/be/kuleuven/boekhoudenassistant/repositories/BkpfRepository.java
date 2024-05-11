@@ -6,6 +6,8 @@ import org.springframework.jdbc.core.RowCallbackHandler;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public class BkpfRepository {
     private final JdbcTemplate template;
@@ -15,12 +17,12 @@ public class BkpfRepository {
         this.template = template;
     }
 
-    public BkpfDto getAllBkpf() {
+    public List<BkpfDto> getAllBkpf() {
         var sql = """
                 select GJAHR, BUKRS, BELNR
                 from BKPF
                 """;
-        return template.queryForObject(sql, bkpfDtoMapper);
+        return template.query(sql, bkpfDtoMapper);
     }
 
 }
