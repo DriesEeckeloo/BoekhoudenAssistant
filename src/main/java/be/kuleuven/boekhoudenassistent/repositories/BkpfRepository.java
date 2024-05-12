@@ -29,7 +29,7 @@ public class BkpfRepository {
         var sql = """
                 select Bukrs, Belnr, Gjahr, Blart, Bldat, Budat, Monat, Cpudt, Cputm
                 from BKPF
-                order by 1
+                order by 1, 2
                 """;
         return template.query(sql, bkpfMapper);
     }
