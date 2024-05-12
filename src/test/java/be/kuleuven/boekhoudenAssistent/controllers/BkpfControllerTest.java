@@ -1,4 +1,4 @@
-package be.kuleuven.boekhoudenAssistant.controllers;
+package be.kuleuven.boekhoudenAssistent.controllers;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;

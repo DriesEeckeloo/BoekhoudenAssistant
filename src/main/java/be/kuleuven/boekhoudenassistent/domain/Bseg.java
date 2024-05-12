@@ -1,4 +1,4 @@
-package be.kuleuven.boekhoudenassistant.domain;
+package be.kuleuven.boekhoudenassistent.domain;
 
 import java.time.LocalDate;
 

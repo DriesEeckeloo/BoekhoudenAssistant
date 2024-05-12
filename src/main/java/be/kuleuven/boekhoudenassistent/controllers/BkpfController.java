@@ -1,8 +1,10 @@
-package be.kuleuven.boekhoudenassistant.controllers;
+package be.kuleuven.boekhoudenassistent.controllers;
 
-import be.kuleuven.boekhoudenassistant.dto.BkpfDto;
-import be.kuleuven.boekhoudenassistant.services.BkpfService;
+import be.kuleuven.boekhoudenassistent.domain.Bkpf;
+import be.kuleuven.boekhoudenassistent.dto.BkpfFilter;
+import be.kuleuven.boekhoudenassistent.services.BkpfService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,7 +20,13 @@ public class BkpfController {
     }
 
     @GetMapping
-    public List<BkpfDto> getAllBkpf() {
+    public List<Bkpf> getAllBkpf() {
         return bkpfService.getAllBkpf();
     }
+
+    @GetMapping("/filter")
+    public List<Bkpf> getAllBkpfWhere(@RequestBody BkpfFilter filter) {
+        return bkpfService.getAllBkpfWhere(filter);
+    }
+
 }

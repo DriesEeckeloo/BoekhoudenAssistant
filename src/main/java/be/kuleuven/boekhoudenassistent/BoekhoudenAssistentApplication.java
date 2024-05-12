@@ -1,13 +1,13 @@
-package be.kuleuven.boekhoudenassistant;
+package be.kuleuven.boekhoudenassistent;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BoekhoudenAssistantApplication {
+public class BoekhoudenAssistentApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(BoekhoudenAssistantApplication.class, args);
+        SpringApplication.run(BoekhoudenAssistentApplication.class, args);
     }
 
 }

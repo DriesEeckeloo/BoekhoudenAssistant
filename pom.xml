@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>be.kuleuven</groupId>
-    <artifactId>boekhoudenAssistant</artifactId>
+    <artifactId>boekhoudenAssistent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>boekhoudenAssistant</name>
     <description>boekhoudenAssistant</description>

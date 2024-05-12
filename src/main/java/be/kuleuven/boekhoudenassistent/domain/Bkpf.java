@@ -1,4 +1,4 @@
-package be.kuleuven.boekhoudenassistant.domain;
+package be.kuleuven.boekhoudenassistent.domain;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -32,8 +32,19 @@ public class Bkpf {
     // Tijd waarop gegevens zijn ingevoerd
     private LocalTime CPUTM; // TIJD 6
 
-    // Getters
+    public Bkpf(String BUKRS, String BELNR, String GJAHR, String BLART, LocalDate BLDAT, LocalDate BUDAT, String MONAT, LocalDate CPUDT, LocalTime CPUTM) {
+        this.BUKRS = BUKRS;
+        this.BELNR = BELNR;
+        this.GJAHR = GJAHR;
+        this.BLART = BLART;
+        this.BLDAT = BLDAT;
+        this.BUDAT = BUDAT;
+        this.MONAT = MONAT;
+        this.CPUDT = CPUDT;
+        this.CPUTM = CPUTM;
+    }
 
+    // Getters
     public String getBUKRS() {
         return BUKRS;
     }
@@ -68,5 +79,43 @@ public class Bkpf {
 
     public LocalTime getCPUTM() {
         return CPUTM;
+    }
+
+    // Setters
+
+    public void setBUKRS(String BUKRS) {
+        this.BUKRS = BUKRS;
+    }
+
+    public void setBELNR(String BELNR) {
+        this.BELNR = BELNR;
+    }
+
+    public void setGJAHR(String GJAHR) {
+        this.GJAHR = GJAHR;
+    }
+
+    public void setBLART(String BLART) {
+        this.BLART = BLART;
+    }
+
+    public void setBLDAT(LocalDate BLDAT) {
+        this.BLDAT = BLDAT;
+    }
+
+    public void setBUDAT(LocalDate BUDAT) {
+        this.BUDAT = BUDAT;
+    }
+
+    public void setMONAT(String MONAT) {
+        this.MONAT = MONAT;
+    }
+
+    public void setCPUDT(LocalDate CPUDT) {
+        this.CPUDT = CPUDT;
+    }
+
+    public void setCPUTM(LocalTime CPUTM) {
+        this.CPUTM = CPUTM;
     }
 }
