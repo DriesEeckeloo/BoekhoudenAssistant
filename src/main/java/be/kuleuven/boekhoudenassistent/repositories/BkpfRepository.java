@@ -27,8 +27,9 @@ public class BkpfRepository {
 
     public List<Bkpf> getAllBkpf() {
         var sql = """
-                select BUkrs, Belnr, Gjahr, Blart, Bldat, Budat, Monat, Cpudt, Cputm
+                select Bukrs, Belnr, Gjahr, Blart, Bldat, Budat, Monat, Cpudt, Cputm
                 from BKPF
+                order by 1
                 """;
         return template.query(sql, bkpfMapper);
     }

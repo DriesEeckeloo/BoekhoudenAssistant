@@ -118,4 +118,19 @@ public class Bkpf {
     public void setCPUTM(LocalTime CPUTM) {
         this.CPUTM = CPUTM;
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "BUKRS='" + BUKRS + '\'' +
+                ", BELNR='" + BELNR + '\'' +
+                ", GJAHR='" + GJAHR + '\'' +
+                ", BLART='" + BLART + '\'' +
+                ", BLDAT=" + BLDAT +
+                ", BUDAT=" + BUDAT +
+                ", MONAT='" + MONAT + '\'' +
+                ", CPUDT=" + CPUDT +
+                ", CPUTM=" + CPUTM +
+                '}';
+    }
 }
