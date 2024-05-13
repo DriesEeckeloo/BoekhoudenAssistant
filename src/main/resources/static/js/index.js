@@ -155,10 +155,12 @@ function createTableBodyDataWithDetails(bkpfResult) {
             }
             detailTable.id = "detailsTable";
             detailsTbody.id = "detailsTbody";
-            extraInfoCell.id = "extraInfoCell";
+            extraInfoCell.className = "extraInfoCell";
+            let extraInfoDiv = document.createElement("div");
+            extraInfoDiv.appendChild(detailTable);
             extraInfoCell.colSpan = 9; // Adjust this number to match the number of columns in your table
-            extraInfoCell.appendChild(detailTable); // Replace this with the actual extra info
-            extraInfoCell.style.borderLeft = "5px solid #54bceb";
+            extraInfoCell.appendChild(extraInfoDiv); // Replace this with the actual extra info
+            extraInfoCell.style.borderLeft = "10px solid #54bceb";
         }
 
     }

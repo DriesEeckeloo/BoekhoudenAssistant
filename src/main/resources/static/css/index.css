@@ -84,7 +84,7 @@ body {
     text-align: center;
 }
 
-#extraInfoCell {
+.extraInfoCell {
     background-color: #f2f2f2;
     box-sizing: border-box;
 }
