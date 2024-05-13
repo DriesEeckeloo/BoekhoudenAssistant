@@ -55,7 +55,19 @@ async function submitFilters() {
         };
         const json = JSON.stringify(data);
         if (byId("details").checked) {
-
+            const response = await fetch(`bkpf/filter/details`, {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: json
+            });
+            if (response.ok) {
+                const bkpfResult = await response.json();
+                console.log(bkpfResult);
+                clearTableBody();
+                createTableBodyDataWithDetails(bkpfResult);
+            } else {
+                alert("storing bij ophalen data");
+            }
         } else {
             const response = await fetch(`bkpf/filter`, {
                 method: "POST",
@@ -92,6 +104,64 @@ function createTableBodyData(bkpfResult) {
         tr.insertCell().innerText = bkpf.cputm;
         bkpfBody.appendChild(tr);
     }
+    wisselRijKleur();
+}
+
+function createTableBodyDataWithDetails(bkpfResult) {
+    const bkpfBody = byId("bkpfBody");
+    const resultLength = bkpfResult.length;
+    byId("resultNr").innerText = "Result(s): " + resultLength;
+
+    for (const bkpfDetails of bkpfResult) {
+        const tr = bkpfBody.insertRow();
+        tr.insertCell().innerText = bkpfDetails.bkpf.bukrs;
+        tr.insertCell().innerText = bkpfDetails.bkpf.belnr;
+        tr.insertCell().innerText = bkpfDetails.bkpf.gjahr;
+        tr.insertCell().innerText = bkpfDetails.bkpf.blart;
+        tr.insertCell().innerText = bkpfDetails.bkpf.bldat;
+        tr.insertCell().innerText = bkpfDetails.bkpf.budat;
+        tr.insertCell().innerText = bkpfDetails.bkpf.monat;
+        tr.insertCell().innerText = bkpfDetails.bkpf.cpudt;
+        tr.insertCell().innerText = bkpfDetails.bkpf.cputm;
+        bkpfBody.appendChild(tr);
+        if (bkpfDetails.detailsResults.length > 0) {
+            const extraInfoRow = bkpfBody.insertRow();
+            const extraInfoCell = extraInfoRow.insertCell();
+            const detailTable = document.createElement("table");
+            const thead = document.createElement("thead");
+            detailTable.appendChild(thead);
+            let headerRow = document.createElement('tr');
+            thead.appendChild(headerRow);
+            let buzeiTH = document.createElement('th');
+            buzeiTH.innerText = "BUZEI";
+            buzeiTH.title = "Nummer van boekingsregel in boekhoudingsdocument";
+            headerRow.appendChild(buzeiTH);
+            let bschlTH = document.createElement('th');
+            bschlTH.innerText = "BSCHL";
+            bschlTH.title = "boekingssleutel";
+            headerRow.appendChild(bschlTH);
+            let augdtTH = document.createElement('th');
+            augdtTH.innerText = "AUGDT";
+            augdtTH.title = "de datum van vereffening";
+            headerRow.appendChild(augdtTH);
+            let detailsTbody = document.createElement("tbody");
+            detailTable.appendChild(detailsTbody);
+            for (const detail of bkpfDetails.detailsResults) {
+                const tr = bkpfBody.insertRow();
+                tr.insertCell().innerText = detail.BUZEI;
+                tr.insertCell().innerText = detail.BSCHL;
+                tr.insertCell().innerText = detail.AUGDT;
+                detailsTbody.appendChild(tr);
+            }
+            detailTable.id = "detailsTable";
+            detailsTbody.id = "detailsTbody";
+            extraInfoCell.id = "extraInfoCell";
+            extraInfoCell.colSpan = 9; // Adjust this number to match the number of columns in your table
+            extraInfoCell.appendChild(detailTable); // Replace this with the actual extra info
+            extraInfoCell.style.borderLeft = "5px solid #54bceb";
+        }
+
+    }
 }
 
 function clearTableBody() {
@@ -101,9 +171,23 @@ function clearTableBody() {
     }
 }
 
+function createDetailsField(details){
+    const extraInfoRow = bkpfBody.insertRow();
+    const extraInfoCell = extraInfoRow.insertCell();
+    extraInfoCell.colSpan = 9; // Adjust this number to match the number of columns in your table
+    extraInfoCell.innerText = "Extra info goes here"; // Replace this with the actual extra info
+}
+
 function verbergErrors() {
     byId("boekjaarError").hidden = true;
     byId("bedrijfsnummerError").hidden = true;
     byId("documentnummerStartError").hidden = true;
     byId("documentnummerEindError").hidden = true;
+}
+
+function wisselRijKleur(){
+    let rows = document.querySelectorAll('#bkpfTable tr:nth-child(even)');
+    for (let i = 0; i < rows.length; i++) {
+        rows[i].style.backgroundColor = '#f2f2f2';
+    }
 }

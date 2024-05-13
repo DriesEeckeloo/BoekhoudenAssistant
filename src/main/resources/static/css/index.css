@@ -65,11 +65,30 @@ body {
     text-align: center;
 }
 
-#bkpfTable tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
 
 #bkpfTable th {
     background-color: #54bceb;
     color: white;
+}
+
+#detailsTable {
+    align-items: center;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#detailsTable th, #detailsTable td {
+    padding: 5px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+#extraInfoCell {
+    background-color: #f2f2f2;
+    box-sizing: border-box;
+}
+
+#detailsTbody {
+    background-color: white;
 }
