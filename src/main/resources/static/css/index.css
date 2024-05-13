@@ -50,7 +50,7 @@
 
 #filterDivContent button {
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #54bceb;
     color: white;
     border: none;
     border-radius: 3px;
@@ -58,7 +58,7 @@
 }
 
 #filterDivContent button:hover {
-    background-color: #45a049;
+    background-color: #3ca6d8;
 }
 
 
@@ -78,6 +78,6 @@
 }
 
 #bkpfTable th {
-    background-color: #4CAF50;
+    background-color: #54bceb;
     color: white;
 }
