@@ -62,7 +62,6 @@ async function submitFilters() {
             });
             if (response.ok) {
                 const bkpfResult = await response.json();
-                console.log(bkpfResult);
                 clearTableBody();
                 createTableBodyDataWithDetails(bkpfResult);
             } else {
