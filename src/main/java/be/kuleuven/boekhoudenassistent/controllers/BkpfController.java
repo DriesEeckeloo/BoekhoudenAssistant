@@ -5,10 +5,7 @@ import be.kuleuven.boekhoudenassistent.dto.BkpfFilter;
 import be.kuleuven.boekhoudenassistent.dto.DetailsResult;
 import be.kuleuven.boekhoudenassistent.dto.FilterResult;
 import be.kuleuven.boekhoudenassistent.services.BkpfService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -27,12 +24,12 @@ public class BkpfController {
         return bkpfService.getAllBkpf();
     }
 
-    @GetMapping("/filter")
+    @PostMapping("/filter")
     public List<Bkpf> getAllBkpfWhere(@RequestBody BkpfFilter filter) {
         return bkpfService.getAllBkpfWhere(filter);
     }
 
-    @GetMapping("/filter/details")
+    @PostMapping("/filter/details")
     public List<FilterResult> getAllBkpfWhereWithDetails(@RequestBody BkpfFilter filter) {
         return bkpfService.getAllBkpfWhereWithDetails(filter);
     }

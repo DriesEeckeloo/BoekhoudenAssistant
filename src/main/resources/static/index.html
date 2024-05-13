@@ -17,21 +17,25 @@
     <div id="filterDivContent">
 
         <div>
+            <p id="boekjaarError" class="error" hidden>Veld moet een nummer bevatten of leeg zijn!</p>
             <label for="boekjaar">Boekjaar (GJAHR):</label><br>
             <input type="number" id="boekjaar" name="boekjaar"><br>
         </div>
 
         <div>
+            <p id="bedrijfsnummerError" class="error" hidden>Veld moet een nummer bevatten of leeg zijn!</p>
             <label for="bedrijfsnummer">Bedrijfsnummer (BUKRS):</label><br>
             <input type="number" id="bedrijfsnummer" name="bedrijfsnummer"><br>
         </div>
 
         <div>
+            <p id="documentnummerStartError" class="error" hidden>Veld moet een nummer bevatten of leeg zijn!</p>
             <label for="documentnummerStart">Documentnummer Start (BELNR):</label><br>
             <input type="number" id="documentnummerStart" name="documentnummerStart"><br>
         </div>
 
         <div>
+            <p id="documentnummerEindError" class="error" hidden>Veld moet een nummer bevatten of leeg zijn!</p>
             <label for="documentnummerEind">Documentnummer Eind (BELNR):</label><br>
             <input type="number" id="documentnummerEind" name="documentnummerEind"><br>
         </div>
@@ -41,7 +45,7 @@
             <label for="details">Details van de documenten tonen</label><br>
         </div>
 
-        <button onclick="submitFilters()">Submit</button>
+        <button id="submitFilterButton">Submit</button>
     </div>
 </div>
 <p id="resultNr"></p>
