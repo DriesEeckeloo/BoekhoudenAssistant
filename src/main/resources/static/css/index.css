@@ -1,3 +1,83 @@
 #banner {
     background-color: #54bceb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 0 10px;
+}
+
+#banner h1 {
+    width: 100%;
+    text-align: center;
+    margin-left: -50px;
+}
+
+#filterDiv {
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+#filterDiv h2 {
+    margin-bottom: 20px;
+}
+
+#filterDivContent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#filterDivContent div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#filterDivContent label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#filterDivContent input[type="number"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+#filterDivContent button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#filterDivContent button:hover {
+    background-color: #45a049;
+}
+
+
+#bkpfTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#bkpfTable th, #bkpfTable td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+#bkpfTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#bkpfTable th {
+    background-color: #4CAF50;
+    color: white;
 }

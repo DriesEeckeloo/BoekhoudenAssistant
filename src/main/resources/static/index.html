@@ -10,23 +10,54 @@
 <body>
 <div id="banner">
     <img src="img/logo.svg">
+    <h1 class="d-flex justify-content-center">Boekhouden Assistent</h1>
 </div>
-<h1 class="d-flex justify-content-center">Boekhouden Assistent</h1>
+<div id="filterDiv">
+    <h2>Filter</h2>
+    <div id="filterDivContent">
+        <div>
+            <label for="boekjaar">Boekjaar (GJAHR):</label><br>
+            <input type="number" id="boekjaar" name="boekjaar"><br>
+        </div>
+
+        <div>
+            <label for="bedrijfsnummer">Bedrijfsnummer (BUKRS):</label><br>
+            <input type="number" id="bedrijfsnummer" name="bedrijfsnummer"><br>
+        </div>
+
+        <div>
+            <label for="documentnummerStart">Documentnummer Start (BELNR):</label><br>
+            <input type="number" id="documentnummerStart" name="documentnummerStart"><br>
+        </div>
+
+        <div>
+            <label for="documentnummerEind">Documentnummer Eind (BELNR):</label><br>
+            <input type="number" id="documentnummerEind" name="documentnummerEind"><br>
+        </div>
+
+        <div>
+            <input type="checkbox" id="details" name="details">
+            <label for="details">Details van de documenten tonen</label><br>
+        </div>
+
+        <button onclick="submitFilters()">Submit</button>
+    </div>
+</div>
 <p id="resultNr"></p>
 <div>
 
-    <table class="table table-striped">
+    <table id="bkpfTable" class="table table-striped">
         <thead>
         <tr>
-            <th>BUKRS</th>
-            <th>BELNR</th>
-            <th>GJAHR</th>
-            <th>BLART</th>
-            <th>BLDAT</th>
-            <th>BUDAT</th>
-            <th>MONAT</th>
-            <th>CPUDT</th>
-            <th>CPUTM</th>
+            <th title="Bedrijfsnummer">BUKRS</th>
+            <th title="Documentnummer boekhoudingsdocument">BELNR</th>
+            <th title="Boekjaar">GJAHR</th>
+            <th title="Documentsoort">BLART</th>
+            <th title="Documentdatum in document">BLDAT</th>
+            <th title="Boekingsdatum in document">BUDAT</th>
+            <th title="Boekmaand">MONAT</th>
+            <th title="Dag waarop boekhoudingsdocument is ingevoerd">CPUDT</th>
+            <th title="Tijd waarop gegevens zijn ingevoerd">CPUTM</th>
         </tr>
         </thead>
         <tbody id="bkpfBody">

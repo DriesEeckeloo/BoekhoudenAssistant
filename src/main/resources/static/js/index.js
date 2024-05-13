@@ -1,6 +1,6 @@
 'use strict';
 import {byId, toon, verberg} from "./util.js";
-
+clearTableBody();
 const response = await fetch("bkpf");
 if (response.ok) {
     const bkpfResult = await response.json();
@@ -27,3 +27,17 @@ if (response.ok) {
     toon("storing");
 }
 
+await function getDataWithFilter(){
+    if (byId("details").checked){
+
+    } else {
+
+    }
+}
+
+function clearTableBody() {
+    const tbody = document.getElementById("bkpfBody");
+    while (tbody.firstChild) {
+        tbody.removeChild(tbody.firstChild);
+    }
+}
